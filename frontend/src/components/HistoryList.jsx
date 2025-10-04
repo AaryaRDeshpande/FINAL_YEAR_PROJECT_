@@ -9,33 +9,48 @@ export default function HistoryList({ items, onSelect, onDelete }) {
   };
 
   return (
-    <div className="card">
-      <div className="header"><h3>Recent Documents</h3><span className="badge">History</span></div>
-      <div className="list">
-        {items.length === 0 && <div className="muted">No documents yet.</div>}
-        {items.map((d) => (
-          <div key={d._id} className="list-item" style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'12px',border:'1px solid #ddd',borderRadius:'8px',marginBottom:'8px'}}>
-            <button 
-              className="btn secondary" 
+    <div className="history-card">
+      <h3>📚 Recent Documents</h3>
+      {items.length === 0 ? (
+        <div className="history-empty">
+          <p>No documents processed yet.</p>
+          <p>Upload your first document to get started!</p>
+        </div>
+      ) : (
+        <div className="history-list">
+          {items.map((d) => (
+            <div 
+              key={d._id} 
+              className="history-item"
               onClick={() => onSelect(d._id)}
-              style={{flex:1,textAlign:'left',border:'none',background:'none',padding:'0'}}
             >
-              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',width:'100%'}}>
-                <span>{d.filename}</span>
-                <span className="badge">{d.status}</span>
+              <div className="history-item-content">
+                <div className="history-item-name">{d.filename}</div>
+                <div className="history-item-date">
+                  {new Date(d.createdAt || Date.now()).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  })}
+                </div>
               </div>
-            </button>
-            <button 
-              className="btn danger" 
-              onClick={(e) => handleDelete(e, d._id)}
-              style={{marginLeft:'8px',padding:'4px 8px',fontSize:'12px'}}
-              title="Delete document"
-            >
-              🗑️
-            </button>
-          </div>
-        ))}
-      </div>
+              <div className="history-item-actions">
+                <span className="badge">{d.status}</span>
+                <button 
+                  className="btn danger" 
+                  onClick={(e) => handleDelete(e, d._id)}
+                  style={{padding: '6px 10px', fontSize: '12px'}}
+                  title="Delete document"
+                >
+                  🗑️
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

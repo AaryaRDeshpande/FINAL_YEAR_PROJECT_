@@ -5,6 +5,7 @@ import ComparisonView from '../components/ComparisonView.jsx'
 import EntityList from '../components/EntityList.jsx'
 import HistoryList from '../components/HistoryList.jsx'
 import TestDocuments from '../components/TestDocuments.jsx'
+import LoadingSpinner from '../components/LoadingSpinner.jsx'
 import { uploadDocument, processDocument, getDocument, listDocuments, deleteDocument } from '../api/client.js'
 
 export default function Dashboard() {
@@ -77,40 +78,55 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="container">
-      <div className="header">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <button 
-            className="btn secondary" 
-            onClick={() => navigate('/')}
-            style={{ padding: '8px 12px', fontSize: '14px' }}
-          >
-            ← Back to Home
-          </button>
-          <h2>Legal Document Summarizer</h2>
+    <div className="dashboard-container">
+      <div className="container">
+        <div className="header">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <button 
+              className="btn secondary" 
+              onClick={() => navigate('/')}
+              style={{ padding: '8px 12px', fontSize: '14px' }}
+            >
+              ← Back to Home
+            </button>
+            <h2 style={{ margin: 0, fontSize: '1.8rem', fontWeight: '700' }}>Legal Document Summarizer</h2>
+          </div>
+          <div className="badge">{status}</div>
         </div>
-        <div className="badge">{status}</div>
-      </div>
 
-      <div className="grid">
-        <div className="card">
-          <Dropzone onFileSelected={onFileSelected} disabled={disableUpload} />
-          <div className="muted" style={{marginTop:8}}>{message}</div>
+        <div className="grid">
+          <div className="card">
+            <h3 style={{ marginBottom: '20px', fontSize: '1.2rem', fontWeight: '600' }}>Upload Document</h3>
+            <Dropzone onFileSelected={onFileSelected} disabled={disableUpload} />
+            {(status === 'uploading' || status === 'processing') && (
+              <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}>
+                <LoadingSpinner 
+                  size="medium" 
+                  text={status === 'uploading' ? 'Uploading...' : 'Processing...'}
+                />
+              </div>
+            )}
+            {message && (
+              <div className={`status-message ${status === 'error' ? 'error' : ''}`} style={{marginTop: 16}}>
+                {message}
+              </div>
+            )}
+          </div>
+          <HistoryList items={history} onSelect={(id)=>setSelectedId(id)} onDelete={handleDeleteDocument} />
         </div>
-        <HistoryList items={history} onSelect={(id)=>setSelectedId(id)} onDelete={handleDeleteDocument} />
+
+        <div style={{height: 32}} />
+
+        <TestDocuments onDocumentSelected={onFileSelected} disabled={disableUpload} />
+
+        <div style={{height: 32}} />
+
+        <ComparisonView original={doc?.originalText} simplified={doc?.simplifiedText} />
+
+        <div style={{height: 32}} />
+
+        <EntityList entities={doc?.entities || []} />
       </div>
-
-      <div style={{height:16}} />
-
-      <TestDocuments onDocumentSelected={onFileSelected} disabled={disableUpload} />
-
-      <div style={{height:16}} />
-
-      <ComparisonView original={doc?.originalText} simplified={doc?.simplifiedText} />
-
-      <div style={{height:16}} />
-
-      <EntityList entities={doc?.entities || []} />
     </div>
   )
 }

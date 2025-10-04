@@ -22,76 +22,76 @@ export default function LandingPage() {
             Save time, reduce legal costs, and make informed decisions with our advanced document processing technology.
           </p>
           <div className="hero-stats">
-            <div className="stat-item">
+            <div className="stat-item animate-fade-in-up stagger-1">
               <div className="stat-number">95%</div>
               <div className="stat-label">Accuracy Rate</div>
             </div>
-            <div className="stat-item">
+            <div className="stat-item animate-fade-in-up stagger-2">
               <div className="stat-number">10x</div>
               <div className="stat-label">Faster Processing</div>
             </div>
-            <div className="stat-item">
+            <div className="stat-item animate-fade-in-up stagger-3">
               <div className="stat-number">1000+</div>
               <div className="stat-label">Documents Processed</div>
             </div>
           </div>
         </div>
 
-        <div className="features-section">
+        <div id="features" className="features-section">
           <h2>Key Features</h2>
           <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">📄</div>
+            <div className="feature-card animate-fade-in-up stagger-1">
+              <div className="feature-icon animate-float">📄</div>
               <h3>Document Upload</h3>
               <p>Upload PDF, DOCX, or TXT files with drag-and-drop functionality</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">📝</div>
+            <div className="feature-card animate-fade-in-up stagger-2">
+              <div className="feature-icon animate-float">📝</div>
               <h3>Text Summarization</h3>
               <p>Extract key points and create comprehensive summaries</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">🔍</div>
+            <div className="feature-card animate-fade-in-up stagger-3">
+              <div className="feature-icon animate-float">🔍</div>
               <h3>Legal Simplification</h3>
               <p>Convert complex legal language into plain, understandable text</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">⚖️</div>
+            <div className="feature-card animate-fade-in-up stagger-4">
+              <div className="feature-icon animate-float">⚖️</div>
               <h3>Entity Extraction</h3>
               <p>Identify parties, dates, obligations, and key legal entities</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">📊</div>
+            <div className="feature-card animate-fade-in-up stagger-5">
+              <div className="feature-icon animate-float">📊</div>
               <h3>Side-by-Side Comparison</h3>
               <p>Compare original and simplified versions for better understanding</p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">💾</div>
+            <div className="feature-card animate-fade-in-up stagger-6">
+              <div className="feature-icon animate-float">💾</div>
               <h3>Document History</h3>
               <p>Store and manage your processed documents in MongoDB</p>
             </div>
           </div>
         </div>
 
-        <div className="how-it-works">
+        <div id="how-it-works" className="how-it-works">
           <h2>How It Works</h2>
           <div className="steps">
-            <div className="step">
-              <div className="step-number">1</div>
+            <div className="step animate-fade-in-left stagger-1">
+              <div className="step-number animate-pulse">1</div>
               <div className="step-content">
                 <h3>Upload Document</h3>
                 <p>Drag and drop your legal document or select from test documents</p>
               </div>
             </div>
-            <div className="step">
-              <div className="step-number">2</div>
+            <div className="step animate-fade-in-left stagger-2">
+              <div className="step-number animate-pulse">2</div>
               <div className="step-content">
                 <h3>AI Processing</h3>
                 <p>Our system extracts text, identifies entities, and creates summaries</p>
               </div>
             </div>
-            <div className="step">
-              <div className="step-number">3</div>
+            <div className="step animate-fade-in-left stagger-3">
+              <div className="step-number animate-pulse">3</div>
               <div className="step-content">
                 <h3>Review Results</h3>
                 <p>Compare original vs simplified text and explore extracted entities</p>
@@ -100,7 +100,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="about-section">
+        <div id="about" className="about-section">
           <h2>About Our Technology</h2>
           <div className="about-content">
             <div className="about-text">

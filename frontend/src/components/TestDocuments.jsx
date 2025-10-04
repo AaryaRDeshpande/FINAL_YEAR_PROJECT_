@@ -61,15 +61,19 @@ export default function TestDocuments({ onDocumentSelected, disabled }) {
 
   return (
     <div className="card">
-      <div className="header">
-        <h3>Test Documents</h3>
-        <span className="badge">Demo</span>
+      <div style={{ marginBottom: '20px' }}>
+        <h3 style={{ margin: '0 0 8px 0', fontSize: '1.3rem', fontWeight: '700' }}>
+          📋 Try Sample Documents
+        </h3>
+        <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem' }}>
+          Test our AI with these pre-loaded legal documents to see how it works
+        </p>
       </div>
       <div className="test-docs-grid">
-        {TEST_DOCUMENTS.map((doc) => (
+        {TEST_DOCUMENTS.map((doc, index) => (
           <button
             key={doc.filename}
-            className="test-doc-item btn secondary"
+            className={`test-doc-item animate-fade-in-up stagger-${(index % 6) + 1}`}
             onClick={() => handleSelectDocument(doc)}
             disabled={disabled}
             title={doc.description}
