@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Dropzone from '../components/Dropzone.jsx'
 import ComparisonView from '../components/ComparisonView.jsx'
 import EntityList from '../components/EntityList.jsx'
@@ -7,11 +8,20 @@ import TestDocuments from '../components/TestDocuments.jsx'
 import { uploadDocument, processDocument, getDocument, listDocuments, deleteDocument } from '../api/client.js'
 
 export default function Dashboard() {
+  const navigate = useNavigate()
   const [history, setHistory] = useState([])
   const [selectedId, setSelectedId] = useState(null)
   const [doc, setDoc] = useState(null)
   const [status, setStatus] = useState('idle')
   const [message, setMessage] = useState('')
+
+  // Check authentication
+  useEffect(() => {
+    const user = localStorage.getItem('user')
+    if (!user) {
+      navigate('/login')
+    }
+  }, [navigate])
 
   const refreshHistory = async () => {
     const items = await listDocuments()
@@ -69,7 +79,16 @@ export default function Dashboard() {
   return (
     <div className="container">
       <div className="header">
-        <h2>Legal Document Summarizer</h2>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <button 
+            className="btn secondary" 
+            onClick={() => navigate('/')}
+            style={{ padding: '8px 12px', fontSize: '14px' }}
+          >
+            ← Back to Home
+          </button>
+          <h2>Legal Document Summarizer</h2>
+        </div>
         <div className="badge">{status}</div>
       </div>
 

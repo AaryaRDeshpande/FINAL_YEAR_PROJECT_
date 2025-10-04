@@ -7,6 +7,7 @@ export async function connectToDatabase() {
     await mongoose.connect(MONGODB_URI, {
       autoIndex: true,
       serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
+      family: 4, // Force IPv4
     });
     console.log('Connected to MongoDB');
   } catch (error) {
