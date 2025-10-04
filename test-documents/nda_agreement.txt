@@ -1,0 +1,71 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Mutual Non-Disclosure Agreement ("Agreement") is entered into as of November 5, 2024, between InnovateTech Corp., a Delaware corporation ("First Party"), and FutureSoft Solutions Inc., a California corporation ("Second Party").
+
+RECITALS
+
+WHEREAS, the parties wish to explore a potential business relationship involving the development of artificial intelligence software solutions; and
+WHEREAS, in connection with such discussions, each party may disclose to the other certain confidential and proprietary information;
+
+NOW, THEREFORE, in consideration of the mutual covenants contained herein, the parties agree as follows:
+
+1. DEFINITION OF CONFIDENTIAL INFORMATION
+"Confidential Information" means any and all non-public, confidential, or proprietary information disclosed by either party to the other, whether orally, in writing, or in any other form, including but not limited to:
+a) Technical data, algorithms, source code, and software specifications
+b) Business plans, financial information, and customer lists
+c) Marketing strategies and pricing information
+d) Research and development projects
+e) Any other information marked as "Confidential" or that would reasonably be considered confidential
+
+2. OBLIGATIONS OF RECEIVING PARTY
+Each party agrees to:
+a) Hold all Confidential Information in strict confidence
+b) Use Confidential Information solely for the purpose of evaluating the potential business relationship
+c) Not disclose Confidential Information to any third party without prior written consent
+d) Limit access to Confidential Information to employees who have a legitimate need to know
+e) Take reasonable precautions to protect the confidentiality of such information
+
+3. EXCEPTIONS
+The obligations set forth in Section 2 shall not apply to information that:
+a) Is or becomes publicly available through no breach of this Agreement
+b) Was rightfully known by the receiving party prior to disclosure
+c) Is rightfully received from a third party without breach of confidentiality
+d) Is independently developed without use of Confidential Information
+e) Is required to be disclosed by law or court order
+
+4. TERM
+This Agreement shall remain in effect for a period of three (3) years from the date first written above, unless terminated earlier by mutual written consent of the parties.
+
+5. RETURN OF MATERIALS
+Upon termination of this Agreement or upon request, each party shall promptly return or destroy all documents, materials, and other tangible manifestations of Confidential Information received from the other party.
+
+6. NO LICENSE GRANTED
+Nothing in this Agreement grants any license or right to use any intellectual property of either party. All intellectual property rights remain with the disclosing party.
+
+7. REMEDIES
+Each party acknowledges that any breach of this Agreement may cause irreparable harm for which monetary damages would be inadequate. Therefore, each party shall be entitled to seek injunctive relief and other equitable remedies in addition to any other available remedies.
+
+8. NO OBLIGATION TO DISCLOSE
+Neither party is obligated to disclose any Confidential Information to the other party, and neither party is obligated to enter into any further agreement or business relationship.
+
+9. GOVERNING LAW
+This Agreement shall be governed by the laws of the State of Delaware, without regard to conflict of law principles.
+
+10. ENTIRE AGREEMENT
+This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior negotiations, representations, and agreements.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+INNOVATETECH CORP.
+
+By: /s/ Lisa Chang
+Name: Lisa Chang
+Title: Chief Technology Officer
+Date: November 5, 2024
+
+FUTURESOFT SOLUTIONS INC.
+
+By: /s/ Mark Anderson
+Name: Mark Anderson
+Title: Vice President of Business Development
+Date: November 5, 2024

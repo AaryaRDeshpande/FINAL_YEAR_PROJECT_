@@ -4,9 +4,14 @@ import helmet from 'helmet';
 import compression from 'compression';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import documentsRouter from './routes/documents.js';
 import { CLIENT_ORIGIN } from './config/env.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -21,6 +26,9 @@ const limiter = rateLimit({ windowMs: 60 * 1000, max: 120 });
 app.use(limiter);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
+// Serve test documents as static files
+app.use('/test-documents', express.static(path.join(__dirname, '..', '..', 'test-documents')));
 
 app.use('/api/documents', documentsRouter);
 

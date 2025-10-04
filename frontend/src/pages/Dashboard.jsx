@@ -3,7 +3,8 @@ import Dropzone from '../components/Dropzone.jsx'
 import ComparisonView from '../components/ComparisonView.jsx'
 import EntityList from '../components/EntityList.jsx'
 import HistoryList from '../components/HistoryList.jsx'
-import { uploadDocument, processDocument, getDocument, listDocuments } from '../api/client.js'
+import TestDocuments from '../components/TestDocuments.jsx'
+import { uploadDocument, processDocument, getDocument, listDocuments, deleteDocument } from '../api/client.js'
 
 export default function Dashboard() {
   const [history, setHistory] = useState([])
@@ -47,6 +48,24 @@ export default function Dashboard() {
 
   const disableUpload = useMemo(() => status === 'uploading' || status === 'processing', [status])
 
+  const handleDeleteDocument = async (id) => {
+    try {
+      await deleteDocument(id)
+      // If the deleted document was selected, clear the selection
+      if (selectedId === id) {
+        setSelectedId(null)
+        setDoc(null)
+      }
+      await refreshHistory()
+      setMessage('Document deleted successfully')
+      setTimeout(() => setMessage(''), 3000)
+    } catch (e) {
+      console.error(e)
+      setMessage(e?.response?.data?.message || 'Error deleting document')
+      setTimeout(() => setMessage(''), 3000)
+    }
+  }
+
   return (
     <div className="container">
       <div className="header">
@@ -59,8 +78,12 @@ export default function Dashboard() {
           <Dropzone onFileSelected={onFileSelected} disabled={disableUpload} />
           <div className="muted" style={{marginTop:8}}>{message}</div>
         </div>
-        <HistoryList items={history} onSelect={(id)=>setSelectedId(id)} />
+        <HistoryList items={history} onSelect={(id)=>setSelectedId(id)} onDelete={handleDeleteDocument} />
       </div>
+
+      <div style={{height:16}} />
+
+      <TestDocuments onDocumentSelected={onFileSelected} disabled={disableUpload} />
 
       <div style={{height:16}} />
 

@@ -28,4 +28,9 @@ export async function listDocuments() {
   return data
 }
 
+export async function deleteDocument(id) {
+  const { data } = await api.delete(`/documents/${id}`)
+  return data
+}
+
 export default api

@@ -1,0 +1,77 @@
+ASSET PURCHASE AGREEMENT
+
+This Asset Purchase Agreement ("Agreement") is made and entered into as of August 22, 2024, by and between GreenTech Innovations Inc., a Texas corporation ("Seller"), and EcoSolutions Holdings LLC, a Delaware limited liability company ("Buyer").
+
+RECITALS
+
+WHEREAS, Seller owns and operates a renewable energy consulting business; and
+WHEREAS, Buyer desires to purchase certain assets of Seller's business as described herein;
+
+NOW, THEREFORE, in consideration of the mutual covenants and agreements set forth herein, the parties agree as follows:
+
+1. PURCHASE AND SALE OF ASSETS
+Subject to the terms and conditions of this Agreement, Seller agrees to sell, transfer, and assign to Buyer, and Buyer agrees to purchase from Seller, the following assets ("Purchased Assets"):
+
+a) All customer contracts and client relationships
+b) All intellectual property, including patents, trademarks, and proprietary methodologies
+c) All equipment, furniture, and fixtures located at 789 Innovation Drive, Austin, TX 78701
+d) All accounts receivable as of the Closing Date
+e) All inventory and supplies
+f) All permits, licenses, and governmental approvals
+
+2. PURCHASE PRICE
+The total purchase price for the Purchased Assets shall be Two Million Five Hundred Thousand Dollars ($2,500,000.00) ("Purchase Price"), payable as follows:
+a) One Million Dollars ($1,000,000.00) in cash at Closing
+b) One Million Five Hundred Thousand Dollars ($1,500,000.00) in the form of a promissory note bearing interest at 5% per annum, payable in equal monthly installments over five (5) years
+
+3. CLOSING
+The closing of the transactions contemplated by this Agreement ("Closing") shall take place on September 30, 2024, at 10:00 AM at the offices of Legal Partners LLP, 123 Main Street, Austin, TX 78701.
+
+4. REPRESENTATIONS AND WARRANTIES OF SELLER
+Seller represents and warrants to Buyer that:
+a) Seller has full corporate power and authority to enter into this Agreement
+b) The Purchased Assets are free and clear of all liens and encumbrances
+c) All customer contracts are in good standing with no material defaults
+d) All financial statements provided are true and accurate
+e) There are no pending or threatened legal proceedings affecting the business
+
+5. REPRESENTATIONS AND WARRANTIES OF BUYER
+Buyer represents and warrants to Seller that:
+a) Buyer has full power and authority to enter into this Agreement
+b) Buyer has sufficient funds to complete the purchase
+c) The execution and performance of this Agreement will not violate any other agreements
+
+6. COVENANTS
+From the date of this Agreement until Closing, Seller covenants to:
+a) Operate the business in the ordinary course
+b) Maintain all customer relationships
+c) Not enter into any material contracts without Buyer's consent
+d) Provide Buyer with monthly financial statements
+
+7. INDEMNIFICATION
+Seller shall indemnify and hold harmless Buyer from any losses arising from:
+a) Breach of Seller's representations and warranties
+b) Liabilities not assumed by Buyer
+c) Actions taken by Seller prior to Closing
+
+8. NON-COMPETE
+For a period of three (3) years following Closing, Seller shall not directly or indirectly compete with the business within the State of Texas.
+
+9. GOVERNING LAW
+This Agreement shall be governed by the laws of the State of Texas.
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+GREENTECH INNOVATIONS INC.
+
+By: /s/ David Park
+Name: David Park
+Title: President and CEO
+Date: August 22, 2024
+
+ECOSOLUTIONS HOLDINGS LLC
+
+By: /s/ Jennifer Walsh
+Name: Jennifer Walsh
+Title: Managing Member
+Date: August 22, 2024

@@ -5,6 +5,7 @@ import { extractTextFromFile } from '../services/textExtraction.js';
 import { summarizeText } from '../services/summarizer.js';
 import { simplifyText } from '../services/simplifier.js';
 import { extractEntities } from '../services/entityExtractor.js';
+import { UPLOAD_DIR } from '../config/env.js';
 
 export async function uploadDocument(req, res, next) {
   try {
@@ -26,7 +27,7 @@ export async function processDocument(req, res, next) {
     const doc = await Document.findById(id);
     if (!doc) return res.status(404).json({ message: 'Document not found' });
 
-    const filePath = path.join(process.cwd(), 'backend', 'uploads', doc.filename);
+    const filePath = path.join(UPLOAD_DIR, doc.filename);
     const text = await extractTextFromFile(filePath, doc.originalMimeType);
 
     const summary = summarizeText(text, 5);
@@ -64,6 +65,31 @@ export async function listDocuments(req, res, next) {
   try {
     const docs = await Document.find().sort({ createdAt: -1 }).limit(100);
     res.json(docs);
+  } catch (err) {
+    next(err);
+  }
+}
+
+export async function deleteDocument(req, res, next) {
+  try {
+    const { id } = req.params;
+    const doc = await Document.findById(id);
+    if (!doc) return res.status(404).json({ message: 'Document not found' });
+
+    // Delete the physical file if it exists
+    const filePath = path.join(UPLOAD_DIR, doc.filename);
+    try {
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
+    } catch (fileError) {
+      console.warn('Could not delete file:', fileError.message);
+    }
+
+    // Delete the document from database
+    await Document.findByIdAndDelete(id);
+    
+    res.json({ message: 'Document deleted successfully' });
   } catch (err) {
     next(err);
   }
