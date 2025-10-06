@@ -6,6 +6,7 @@ import EntityList from '../components/EntityList.jsx'
 import HistoryList from '../components/HistoryList.jsx'
 import TestDocuments from '../components/TestDocuments.jsx'
 import LoadingSpinner from '../components/LoadingSpinner.jsx'
+import KnowledgeGraph from '../components/KnowledgeGraph.jsx'
 import { uploadDocument, processDocument, getDocument, listDocuments, deleteDocument } from '../api/client.js'
 
 export default function Dashboard() {
@@ -118,6 +119,10 @@ export default function Dashboard() {
         <div style={{height: 32}} />
 
         <TestDocuments onDocumentSelected={onFileSelected} disabled={disableUpload} />
+
+        <div style={{height: 32}} />
+
+        <KnowledgeGraph document={doc} entities={doc?.entities || []} />
 
         <div style={{height: 32}} />
 
